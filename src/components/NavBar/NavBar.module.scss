@@ -1,9 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap");
+
 .nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   padding: 20px 0;
   gap: 64px;
+  @media screen and (max-width: 1024px) {
+    justify-content: space-between;
+    gap: 0;
+  }
+  @media screen and (max-width: 768px) {
+    justify-content: space-between;
+  }
   .nav_left {
     display: flex;
     align-items: center;
@@ -13,44 +22,126 @@
       cursor: pointer;
       background: #3e3e3e;
       border-radius: 4px;
-      font-size: 20px;
-      margin-right: 37px;
+      font-weight: 200;
+      @media screen and (max-width: 1024px) {
+        font-size: 20px;
+      }
+      @media screen and (max-width: 768px) {
+        font-size: 18px;
+      }
+      @media screen and (max-width: 425px) {
+        font-size: 14px;
+      }
       :nth-child(1) {
         position: relative;
         left: -10px;
         color: #3e3e3e;
         padding: 6px;
         border-radius: 4px;
+        font-size: 20px;
         background: #fed036;
+        @media screen and (max-width: 1024px) {
+          padding: 4px;
+        }
+        @media screen and (max-width: 768px) {
+          font-size: 18px;
+          padding: 4px;
+        }
+        @media screen and (max-width: 425px) {
+          font-size: 14px;
+        }
       }
       :nth-last-child(1) {
         color: #fff;
         padding-right: 12px;
+        font-size: 20px;
+        @media screen and (max-width: 1024px) {
+          padding-right: 8px;
+        }
+        @media screen and (max-width: 768px) {
+          font-size: 18px;
+          padding: 4px;
+        }
+        @media screen and (max-width: 425px) {
+          font-size: 14px;
+          padding-right: 7px;
+        }
       }
     }
     .menu_icon {
       width: 100%;
       max-width: 40px;
       height: auto;
+      @media screen and (max-width: 1024px) {
+        display: none;
+      }
     }
     .ul_items {
       display: flex;
+      gap: 20px;
       & > * + * {
-        font-size: 18px;
-        margin-left: 40px;
+        font-size: max(18px);
+      }
+      @media screen and (max-width: 1024px) {
+        display: none;
       }
     }
   }
   .nav_right {
     display: flex;
     justify-content: flex-end;
+    & > * + * {
+      margin-left: 20px;
+    }
+    @media screen and (max-width: 1024px) {
+      & > * + * {
+        margin-left: 10px;
+      }
+    }
     .nav_dropdown {
       display: flex;
       align-items: center;
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+      .icon_city {
+        width: 21px;
+        height: auto;
+      }
+      h3 {
+        font-size: 18px;
+        font-weight: 400;
+        @media screen and (max-width: 1024px) {
+          font-style: 14px;
+        }
+      }
     }
     .nav_text_call {
-      font-size: 28px;
-      font-weight: 900;
+      font-size: max(28px);
+      font-weight: 800;
+      font-family: "Montserrat", sans-serif;
+      span {
+        color: #fed036;
+      }
+      @media screen and (max-width: 1024px) {
+        font-size: 24px;
+      }
+      @media screen and (max-width: 768px) {
+        display: none;
+      }
+    }
+    .icon_menu {
+      width: 35px;
+      height: auto;
+      display: none;
+      @media screen and (max-width: 1024px) {
+        display: block;
+      }
+      @media screen and (max-width: 768px) {
+        width: 35px;
+        height: auto;
+        margin: 0;
+      }
     }
   }
 }
